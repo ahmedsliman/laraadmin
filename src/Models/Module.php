@@ -828,7 +828,8 @@ class Module extends Model
 		}
 	}
 
-	public static function validateRules($module_name, $request, $isEdit = false) {
+	public static function validateRules($module_name, $request, $isEdit = false)
+	{
 		$module = Module::get($module_name);
 		$rules = [];
 		if(isset($module)) {
@@ -1088,7 +1089,6 @@ class Module extends Model
 				$roles = $user->roles();
 			}
 		} else {
-			//$roles = \Auth::user()->roles();
 			//$roles = \Auth::user()->roles();
 			$employeeId = \Auth::user()->context_id;
 			$roleId = \App\Models\Employee::find($employeeId)->role_id;
